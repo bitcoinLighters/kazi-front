@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+@import "tailwindcss";
+
+:root { font-family: 'DM Sans', sans-serif; color: #10152d; background: #f7f9fc; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.app-shell { min-height: 100vh; background: #f7f9fc; }
+.topbar { height: 63px; background: #191a31; display: flex; align-items: center; padding: 0 21px; color: white; position: relative; }
+.icon-button { background: none; border: 0; color: #fff; padding: 3px 0; display: flex; }
+.brand { position: absolute; left: 50%; transform: translateX(-50%); color: #ff9418; display: flex; }
+.account { margin-left: auto; height: 36px; display: flex; align-items: center; gap: 7px; padding: 0 6px 0 15px; border: 1px solid #38384e; border-radius: 13px; color: #bdc0cd; font-size: 11px; }
+.account strong { color: #ff9418; font-size: 12px; }
+.avatar { width: 34px; height: 34px; border-radius: 50%; background: #0d3e6e; color: white; display: grid; place-items: center; font-size: 11px; font-weight: 700; margin-left: 4px; }
+.menu { position: absolute; z-index: 3; top: 56px; left: 14px; width: 160px; padding: 7px; background: white; border: 1px solid #e0e6ef; border-radius: 8px; box-shadow: 0 10px 26px #11182b1c; }
+.menu button { display: block; width: 100%; text-align: left; padding: 9px 10px; border: 0; background: transparent; color: #3d4d6b; border-radius: 5px; font-size: 13px; }
+.menu button:hover { background: #f5f7fa; }
+.content { max-width: 1100px; margin: 0 auto; padding: 24px 21px 60px; }
+.heading-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+h1, h2 { font-family: 'Space Grotesk', sans-serif; margin: 0; letter-spacing: -.3px; }
+h1 { font-size: 22px; }
+.heading-row p { margin: 4px 0 0; color: #647391; font-size: 13px; }
+.primary-button { background: #ff9418; color: white; border: 0; border-radius: 10px; padding: 12px 19px; min-height: 43px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; font-weight: 700; box-shadow: 0 4px 9px #e4751829; white-space: nowrap; }
+.primary-button:hover, .approve-button:hover { background: #ec7c08; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 23px; }
+.stat-card { border: 1px solid #e0e6ee; border-radius: 15px; padding: 22px; min-height: 111px; display: flex; flex-direction: column; background: #f9fbfd; }
+.stat-card.orange { border-color: #ffbd76; background: #fffaf4; }
+.stat-card span, .stat-card small { color: #7788a8; font-size: 11px; }
+.stat-card strong { color: #10152d; font-size: 28px; line-height: 1.1; margin-top: 5px; }
+.stat-card.orange strong { color: #f88814; }
+.stat-card small { margin-top: 1px; }
+.task-table { margin-top: 29px; border: 1px solid #e0e6ee; border-radius: 15px; overflow: hidden; background: white; }
+.table-head, .task-row { display: grid; grid-template-columns: minmax(240px, 2fr) 1fr 1fr 1fr 115px; align-items: center; column-gap: 14px; padding: 0 18px; }
+.table-head { min-height: 64px; background: #f8fafc; color: #7890b1; font-size: 11px; border-bottom: 1px solid #e0e6ee; }
+.task-row { min-height: 85px; border-bottom: 1px solid #e0e6ee; font-size: 13px; }
+.task-row:last-child { border-bottom: 0; }
+.task-name { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; }
+.task-name strong { font-size: 12px; line-height: 1.25; max-width: 190px; }
+.tag { font-style: normal; font-size: 10px; padding: 4px 10px; border-radius: 20px; color: #2865ce; background: #eff5ff; }
+.copywriting { color: #d72d79; background: #fff0f7; }.voice-data { color: #a47808; background: #fff9e7; }
+.reward strong { color: #fa8610; }.reward { color: #5d6c89; font-size: 11px; }.submitter { color: #597092; }
+.status { font-size: 10px; border: 1px solid; border-radius: 20px; padding: 4px 10px; white-space: nowrap; }.reviewing { color: #e4a900; border-color: #ffd76c; background: #fffdf1; }.paid { color: #ff751b; border-color: #ffbd89; background: #fff7f2; }.approved { color: #16a05c; border-color: #a9e7c5; background: #f1fff6; }
+.approve-button { border: 0; background: #ff9418; color: white; border-radius: 9px; padding: 9px 10px; display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; line-height: 1.05; }.empty-action { color: #9aa6b8; font-size: 11px; }
+.modal-backdrop { position: fixed; inset: 0; z-index: 5; background: #14162acc; display: grid; place-items: center; padding: 20px; }.modal { width: min(100%, 400px); padding: 27px; border-radius: 15px; background: white; box-shadow: 0 20px 50px #0c102540; position: relative; }.modal h2 { font-size: 20px; }.modal p { color: #71809a; font-size: 13px; margin: 6px 0 22px; }.close-button { position: absolute; top: 17px; right: 17px; border: 0; color: #77839a; background: transparent; display: flex; }.modal label { display: block; color: #52627e; font-size: 12px; font-weight: 600; }.modal input { display: block; width: 100%; margin-top: 8px; border: 1px solid #d9e0ea; border-radius: 8px; padding: 11px 12px; outline: none; font-size: 13px; }.modal input:focus { border-color: #ff9418; }.modal .primary-button { margin-top: 20px; width: 100%; }
+@media (max-width: 700px) { .content { padding: 22px 14px 40px; }.heading-row { align-items: flex-start; flex-direction: column; }.heading-row .primary-button { width: 100%; }.stats { gap: 10px; }.stat-card { padding: 17px; min-height: 101px; }.task-table { margin-top: 22px; }.table-head { display: none; }.task-row { grid-template-columns: 1fr auto; gap: 10px; padding: 17px 16px; min-height: 0; }.task-name strong { max-width: 220px; }.reward { text-align: right; grid-column: 2; grid-row: 1; }.submitter { grid-column: 1; grid-row: 2; font-size: 12px; }.task-row > div:nth-child(4) { grid-column: 1; grid-row: 3; }.task-row > div:nth-child(5) { grid-column: 2; grid-row: 3; }.account { padding-left: 10px; gap: 4px; }.account > span:first-child { display: none; } }
