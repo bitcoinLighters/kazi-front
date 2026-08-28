@@ -21,8 +21,8 @@ export type Task = {
   submittedBy?: string;
 };
 
-export type CreateTaskData = { title: string; category: string; description?: string; rewardSats: number; deadline?: string };
-export type SubmitWorkData = { description: string; fileUrl?: string; invoice: string };
-export type Wallet = { balanceSats: number; currency?: string };
+export type CreateTaskData = { title: string; category: string; description: string; rewardSats: number; deadline: string };
+export type SubmitWorkData = { description: string; fileUrl?: string; invoice?: string };
+export type Wallet = { balanceSats: number; totalEarnedSats?: number; currency?: string };
 export type Earning = { id: string | number; amountSats: number; description?: string; createdAt?: string };
 export type Payment = { id: string | number; amount: number; recipient?: string; fee?: number; status: string };

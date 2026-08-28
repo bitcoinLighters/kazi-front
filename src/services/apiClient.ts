@@ -1,4 +1,4 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000').replace(/\/$/, '');
 const TOKEN_KEY = 'kazi_auth_token';
 
 export class ApiError extends Error {
@@ -25,9 +25,9 @@ export async function apiRequest<T>(path: string, options: RequestInit = {}): Pr
     ...options,
     headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}), ...options.headers },
   });
-  const body = await response.json().catch(() => undefined) as { data?: T; message?: string } | T | undefined;
+  const body = await response.json().catch(() => undefined) as { data?: T; message?: string; error?: { message?: string } } | T | undefined;
   if (!response.ok) {
-    const message = body && typeof body === 'object' && 'message' in body ? body.message : undefined;
+    const message = body && typeof body === 'object' && 'message' in body ? body.message : body && typeof body === 'object' && 'error' in body ? body.error?.message : undefined;
     throw new ApiError(friendlyMessage(response.status, message), response.status);
   }
   if (body && typeof body === 'object' && 'data' in body && body.data !== undefined) return body.data;

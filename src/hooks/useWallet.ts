@@ -3,7 +3,7 @@ import { walletService } from '../services/walletService';
 import type { Earning, Wallet } from '../types/api';
 
 const mockWallet: Wallet = { balanceSats: 23450, currency: 'sats' };
-const useMockApi = import.meta.env.VITE_USE_MOCK_API !== 'false';
+const useMockApi = import.meta.env.VITE_USE_MOCK_API === 'true';
 
 export function useWallet() {
   const [wallet, setWallet] = useState<Wallet | null>(null);

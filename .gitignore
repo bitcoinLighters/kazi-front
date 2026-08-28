@@ -2,11 +2,4 @@ echo "node_modules
 .env
 build
 dist
-.DS_Store" > .gitignore
-
-git config --global push.autoSetupRemote true
-
-git remote rename orgin origin
-git add .gitignore
-git commit -m "Update .gitignore"
-git push -u origin main
+.DS_Store
